@@ -1,7 +1,7 @@
-node_modules/
+/node_modules
 *.orig
-.idea/
-.vscode/
+/.idea
+/.vscode
 build
 npm-debug.log
 .env
