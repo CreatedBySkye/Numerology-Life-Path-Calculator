@@ -34,7 +34,7 @@ const AuthHeader = () => {
             </Nav.Item>
             <Nav.Item>
               <Link to="/CreateProfile" className="nav-link absolute ml-48 top-4  left-60 text-black">
-               Add A Profile
+               Add Profile
               </Link>
             </Nav.Item>
             <AuthNav />
