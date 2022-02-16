@@ -5,4 +5,4 @@ node_modules/
 build
 npm-debug.log
 .env
-.DS_Store
+.DS_Storenode_modules
