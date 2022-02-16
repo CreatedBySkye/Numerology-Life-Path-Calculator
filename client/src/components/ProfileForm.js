@@ -25,9 +25,9 @@ const ProfileForm = () => {
         email,
       });
       window.location.reload()
-      console.log("Calculating......")
+      alert("Calculating......")
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 

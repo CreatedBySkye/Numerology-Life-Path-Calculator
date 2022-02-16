@@ -39,7 +39,9 @@ const CreateProfile = () => {
   }
 
   const handleUserProfileAdd = async (newProfile, email) => {
+
     try {
+
       await axios.post("http://localhost:5000/profiles", {
         name: newProfile.name,
         birthMonth: Number(newProfile.birthMonth),
@@ -48,11 +50,14 @@ const CreateProfile = () => {
         gender: newProfile.gender,
         email,
       });
+   
       const { data } = await axios.get("http://localhost:5000/profiles/user", {
         params: { email },
       });
+      
       setUserProfiles(data);
       handleClose()
+    
     } catch (error) {
       console.log(error);
     }

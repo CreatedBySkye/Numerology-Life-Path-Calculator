@@ -8,12 +8,12 @@ const AuthHeader = () => {
   return (
     <>
       <div id="header-img">
-        <Navbar fluid_id="navbar" variant="dark" className="text-black xl:h-20 bg-blue-200">
+        <Navbar fluid_id="navbar" variant="dark" className="text-black xl:h-20 bg-blue-200 ">
           <Navbar.Brand>
             &nbsp;
        
             &nbsp;
-            <Link to="/">
+            <Link to="/" className="no-underline text-black bold absolute top-5" >
               Numerology | Life Path Calculator
             </Link>
             <img src="https://i.ibb.co/hf5FJch/lotus.png" alt="lotus" className="logo w-10 absolute right-28 top-4 z-30" />

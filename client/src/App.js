@@ -12,7 +12,7 @@ import UserProfile from "./components/UserProfile";
 function App() {
   const { isAuthenticated } = useAuth0();
   return (
-    <div className="App">
+    <div className="App w-80%">
 
       <Router>
       {isAuthenticated ? <><AuthHeader/></> : <><Header /></>}

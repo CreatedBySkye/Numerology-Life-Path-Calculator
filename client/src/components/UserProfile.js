@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 
+
 const UserProfile = ({
   userProfile,
   otherProfiles,
@@ -172,6 +173,7 @@ const UserProfile = ({
           </Button>
         </Modal.Footer>
       </Modal>
+     
     </>
   );
 };

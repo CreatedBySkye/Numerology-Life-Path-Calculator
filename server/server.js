@@ -10,8 +10,9 @@ const numerologyRouter = require("./routes/numerology.js");
 
 // set up mongodb connection
 const mongoDB = process.env.DB
+const path = require("path")
 
-mongoose.connect("mongodb+srv://smccu726:admin@masterofthesecondveil.j8irh.mongodb.net/react-numerology?retryWrites=true&w=majority", {});
+mongoose.connect(mongoDB, {});
 mongoose.connection.on(
   "error",
   console.error.bind(console, "MongoDB connection error:")
@@ -23,6 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
+
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.get("/", (_, res) => {
   res.send("Hello world");
@@ -40,6 +43,10 @@ app.use("/seed/numerology", seedNumerologyRouter);
 app.use("/profile", profileRouter);
 app.use("/profiles", profilesRouter);
 app.use("/numerology", numerologyRouter);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // set up express server listening
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
