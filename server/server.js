@@ -35,6 +35,8 @@ app.get("/test", (_, res) => {
   res.send("test request received");
 });
 
+app.get('/', (req, res) => { res.send('Hello from Express!')
+
 // set endpoints for seeding
 app.use("/seed/profiles", seedProfilesRouter);
 app.use("/seed/numerology", seedNumerologyRouter);
