@@ -35,7 +35,7 @@ app.get("/test", (_, res) => {
   res.send("test request received");
 });
 
-app.get('/', (req, res) => { res.send('Hello from Express!')
+
 
 // set endpoints for seeding
 app.use("/seed/profiles", seedProfilesRouter);
@@ -51,4 +51,4 @@ app.get("*", (req, res) => {
 });
 
 // set up express server listening
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
+app.listen(PORT, () => console.log(`listening on ${PORT}`))
