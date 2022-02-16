@@ -26,8 +26,8 @@ const CreateProfile = () => {
 
   const handleUserProfileEdit = async (updatedProfile,id) => {
     try {
-      await axios.put(`http://localhost:5000/profile/${id}`, updatedProfile);
-      const { data } = await axios.get("http://localhost:5000/profiles/user", {
+      await axios.put(`https://numerology-app-server.herokuapp.com/profile/${id}`, updatedProfile);
+      const { data } = await axios.get("https://numerology-app-server.herokuapp.com/profiles/user", {
         params: { email },
       });
       setUserProfiles(data);
@@ -42,7 +42,7 @@ const CreateProfile = () => {
 
     try {
 
-      await axios.post("http://localhost:5000/profiles", {
+      await axios.post("https://numerology-app-server.herokuapp.com/profiles", {
         name: newProfile.name,
         birthMonth: Number(newProfile.birthMonth),
         birthDay: Number(newProfile.birthDay),
@@ -51,7 +51,7 @@ const CreateProfile = () => {
         email,
       });
    
-      const { data } = await axios.get("http://localhost:5000/profiles/user", {
+      const { data } = await axios.get("https://numerology-app-server.herokuapp.com/profiles/user", {
         params: { email },
       });
       
@@ -64,13 +64,13 @@ const CreateProfile = () => {
   };
 
   const handleProfileDelete = async (userEmail, profileId) => {
-    await axios.delete(`http://localhost:5000/profile/${profileId}`, {
+    await axios.delete(`https://numerology-app-server.herokuapp.com/profile/${profileId}`, {
       params: {
         email: userEmail,
       },
     });
 
-    const { data } = await axios.get("http://localhost:5000/profiles/user", {
+    const { data } = await axios.get("https://numerology-app-server.herokuapp.com/profiles/user", {
       params: { email },
     });
     setUserProfiles(data);
@@ -80,7 +80,7 @@ const CreateProfile = () => {
     const fetchUserProfiles = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/profiles/user",
+          "https://numerology-app-server.herokuapp.com/profiles/user",
           {
             params: { email },
           }

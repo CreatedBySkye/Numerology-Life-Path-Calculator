@@ -16,7 +16,7 @@ const ProfileForm = () => {
 
   const handleFormSubmit = async () => {
     try {
-      await axios.post("http://localhost:5000/profiles", {
+      await axios.post("https://numerology-app-server.herokuapp.com/profiles", {
         name: currentName,
         birthMonth: Number(currentBirthMonth),
         birthDay: Number(currentBirthDay),
